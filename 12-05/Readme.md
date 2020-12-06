@@ -53,7 +53,7 @@ Here are some other boarding passes:
 
 As a sanity check, look through your list of boarding passes. ***What is the highest seat ID on a boarding pass?***
 
-`906`.
+`996`.
 
 <span style="color:yellow">The first half of this puzzle is complete! It provides one gold star: *</span>
 
@@ -69,6 +69,6 @@ Your seat wasn't at the very front or back, though; the seats with IDs `+1` and 
 
 ***What is the ID of your seat?***
 
-`519`
+`671`
 
 That's the right answer! You are <span style="color:yellow">one gold star</span> closer to saving your vacation.

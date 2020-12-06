@@ -54,7 +54,7 @@ This list represents answers from five groups:
 For each group, count the number of questions to which anyone answered "yes".
 ***What is the sum of those counts?***
 
-Your puzzle answer was `6297`.
+Your puzzle answer was `6551`.
 
 <span style="color:yellow">The first half of this puzzle is complete! It provides one gold star: *</span>
 
@@ -95,6 +95,6 @@ This list represents answers from five groups:
 For each group, count the number of questions to which everyone answered "yes".
 ***What is the sum of those counts?***
 
-`3158`
+`3358`
 
 That's the right answer! You are <span style="color:yellow">one gold star</span> closer to saving your vacation.
