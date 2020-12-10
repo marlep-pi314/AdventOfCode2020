@@ -2,6 +2,7 @@
 import pprint
 
 f = open("input", "r")
+# f = open("input", "r")
 
 lines = f.readlines()
 
@@ -11,53 +12,48 @@ f.close()
 def format_input(lines):
     rules = {}
     for l in lines:
-        r = l.split("contain")
-        rules[r[0]] = [ b.strip() for b in r[1].split(",") ]
+        r = l.split(" bags contain")
+        values = [ b.strip() for b in r[1].split(",") ]
+        go_to = {}
+        for v in values:
+            description = v.split(" ")
+            if description[0].isdigit():
+                go_to[description[1].strip()+' '+description[2].strip(' ')] = int(v[0])
+            else:
+                go_to['other'] = 0
+        rules[r[0]] = go_to
+
     return rules
+
 rules = format_input(lines)
 
-
 def get_previous(reached, rules):
-    return [ k for k in rules.keys() if reached[:-1] in ' '.join(rules[k])]
+    ret_set = set()
+    for k in rules.keys():
+        if reached in rules[k].keys():
+            ret_set.add(k)
+    return ret_set
 
-def collect_previous(from_list, rules):
-    start_count = len(from_list)
-    print("round {}".format(start_count))
-    result = set(from_list)
-    for element in set(from_list):
-        # print("get_element:")
-        # pprint.pprint(get_previous(element, rules))
-        result = result.union( set(get_previous(element, rules)).union(set(from_list)) ).copy()
-    print("current result")
-    pprint.pprint(result)
+def collect_previous(from_set, rules):
+    result = set()
+    for element in set(from_set):
+        result = result.union( get_previous(element, rules) )
+    new_results = {elem for elem in result if elem not in from_set}
     
-    from_list = list(result)
+    if len(new_results)>0:
+        return from_set.union(collect_previous(new_results, rules))
+    return set()
+
+def count_bags_in(bag, rules):
+    if bag == 'other':
+        return 1
+    return sum( [int(rules[bag][bagtype]) + int(rules[bag][bagtype])*count_bags_in(bagtype, rules) for bagtype in rules[bag].keys()] )
+
     
-    if start_count < len(from_list):
-        return collect_previous(from_list, rules)
-    else:
-        return from_list
-         
-directly = []
-for k in rules.keys():
-    if 'shiny gold' in ' '.join(rules[k]):
-        directly.append(k)
+bag = 'shiny gold'
+count_bags_in(bag, rules)
+print("{} contains: {}".format(bag, count_bags_in(bag, rules)) )
 
-results = collect_previous(['shiny gold'], rules)
-#pprint.pprint(results)
-
-#pprint.pprint(rules)
-
-
-
-
-
-# directly = get_previous('shiny gold', rules)
-
-# endresult = collect_previous(directly, rules)
-
-# print("there are {} different bags?!".format(len(rules.keys())))
-print("{} different bags may contain a \'shiny golden\' bag".format(len(results)))
 
 
 
