@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Aktuelle Datei",
+            "name": "Python: 12-07",
             "type": "python",
             "request": "launch",
             "program": "${file}",
@@ -10,12 +10,28 @@
             "cwd": "${workspaceFolder}/12-07"
         },
         {
-            "name": "Python: Aktuelle Datei",
+            "name": "Python: 12-08",
             "type": "python",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/12-08"
+        },
+        {
+            "name": "Python: 12-10",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/12-10"
+        },
+        {
+            "name": "Python: 12-12",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/12-12"
         }
     ]
 }
