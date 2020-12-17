@@ -40,6 +40,14 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/12-14"
+        },
+        {
+            "name": "Python: 12-16",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/12-16"
         }
     ]
 }
