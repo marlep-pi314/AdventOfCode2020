@@ -40,7 +40,7 @@ It doesn't matter which position corresponds to which field; you can identify in
 
 Consider the validity of the nearby tickets you scanned. What is your ticket scanning error rate?
 
-To begin, get get ([your puzzle input](input)).
+To begin, get ([your puzzle input](input)).
 
 Your puzzle answer was 32835.
 
